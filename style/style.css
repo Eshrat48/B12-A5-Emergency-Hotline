@@ -35,8 +35,9 @@ body {
 
 .website-name {
   color: #006747; /* Teal/dark green color */
-  font-size: 1.35rem; /* Larger font size for "Emergency Service" */
+  font-size: 1.5rem; /* Larger font size for "Emergency Service" */
   font-weight: bolder; /* Bolder to match the image */
+  line-height: 1.2;
 }
 
 .navbar-right {
@@ -51,36 +52,84 @@ body {
   gap: 0.75rem; /* Slightly larger gap inside icon containers */
   padding: 0.75rem 1.5rem; /* Increased padding for larger containers */
   border-radius: 9999px; /* Fully rounded corners */
-  font-size: 1.2rem; /* Larger font size for counts */
+  font-size: 1rem; /* Larger font size for counts */
   font-weight: 600;
 }
 
-.heart-icon-container {
+.heart-icon-container, .coin-icon-container {
   background-color: rgba(65, 255, 107, 0.1); /* Light green background */
 }
 
-.coin-icon-container {
-  background-color: rgba(65, 255, 107, 0.1); /* Light green background */
+/* --- ICON SIZING FIX --- */
+.heart-icon img,
+.coin-icon img {
+    width: 30px; /* Set icon width to 30px */
+    height: 30px; /* Set icon height to 30px */
+    object-fit: contain; /* Ensures the image fits within the bounds without cropping */
 }
 
-.heart-icon,
-.coin-icon {
-    font-size: 1rem; /* Make the emojis larger */
-}
 
 
+/* --- BUTTON SIZING FIX --- */
 .copy-button {
-  background-color: rgba(0, 166, 62, 1); /* Forest green */
-  color: white;
-  font-weight: 700; /* Bolder text for the button */
-  padding: 0.75rem 2rem; /* Increased padding for a larger button */
-  border: none;
-  border-radius: 9999px; /* Fully rounded corners */
-  cursor: pointer;
-  font-size: 1rem; /* Larger font size for button text */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+    background-color: rgba(0, 166, 62, 1); /* Forest green */
+    color: white;
+    font-weight: 700; /* Bolder text for the button */
+    width: 123px; /* Set button width to 123px */
+    height: 52px; /* Set button height to 52px */
+    display: flex; /* Use flexbox to center content if needed */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    border: none;
+    border-radius: 9999px; /* Fully rounded corners */
+    cursor: pointer;
+    font-size: 1rem; /* Adjust font size to fit within button */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    padding: 0; /* Remove default padding as width/height are set */
 }
 
 .copy-button:hover {
     background-color: #1a6f1a; /* Darker green on hover */
+}
+
+/* Hero Section Styling */
+.hero-section {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Updated Gradient background to match the photo */
+  background: linear-gradient(to right, #013223 0%, #006747 50%, #013223 100%);
+  color: white;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-logo {
+  width: 100px;
+  height: auto;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero-slogan {
+  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+  /* max-width: 600px; */
+  line-height: 1.5;
+  margin: 0;
 }
