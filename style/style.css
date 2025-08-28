@@ -6,109 +6,92 @@
 
 body {
   margin: 0;
-  background: #f6fff8; /* Light green background */
+  background: rgba(245, 255, 246, 1);
 }
 
-/* Custom CSS for specific styling */
+/* Navbar Style */
 .navbar {
   display: flex;
   margin: 0 auto;
-  max-width: 1800px;
+  max-width: 1920px;
   justify-content: space-between;
   align-items: center;
-  /* Adjust padding to make the navbar taller and elements spaced out */
-  padding: 1.5rem 3rem; /* Increased vertical and horizontal padding */
+  padding: 1.5rem 3rem;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Ensure it spans the full width */
-  box-sizing: border-box; /* Include padding in the width calculation */
+  width: 100%;
+  box-sizing: border-box; 
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Increased gap for more spacing */
+  gap: 1rem; 
 }
 
 .logo {
-    /* Assuming your logo.png is sized appropriately, or you can set max-height */
-    height: 50px; /* Adjust logo height as needed to match visual scale */
+    height: 50px; 
     width: auto;
 }
 
 .website-name {
-  color: #006747; /* Teal/dark green color */
-  font-size: 1.5rem; /* Larger font size for "Emergency Service" */
-  font-weight: bolder; /* Bolder to match the image */
-  line-height: 1.2;
+  color: rgba(0, 103, 71, 1);
+  font-size: 1.6rem;
+  font-weight: 900; 
+  line-height: 1;
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Increased gap for more spacing between icon containers and button */
+  gap: 1rem; 
 }
 
 .icon-container {
   display: flex;
+  justify-content: center; 
+  border: none;
   align-items: center;
-  gap: 0.75rem; /* Slightly larger gap inside icon containers */
-  padding: 0.75rem 1.5rem; /* Increased padding for larger containers */
-  border-radius: 9999px; /* Fully rounded corners */
-  font-size: 1rem; /* Larger font size for counts */
-  font-weight: 600;
+  gap: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 9999px; 
+  width: 123px;
+  height: 52px; 
 }
 
 .heart-icon-container, .coin-icon-container {
-  background-color: rgba(65, 255, 107, 0.1); /* Light green background */
+  background-color: rgba(65, 255, 107, 0.1); 
+  font-size: 20px; 
+  color: black;
+  font-weight: 900;
 }
 
-/* --- ICON SIZING FIX --- */
 .heart-icon img,
 .coin-icon img {
-    width: 30px; /* Set icon width to 30px */
-    height: 30px; /* Set icon height to 30px */
-    object-fit: contain; /* Ensures the image fits within the bounds without cropping */
+    width: 30px; 
+    height: 30px; 
+    object-fit: contain; 
 }
 
-
-
-/* --- BUTTON SIZING FIX --- */
-.copy-button {
-    background-color: rgba(0, 166, 62, 1); /* Forest green */
+.copy {
+    background-color: rgba(0, 166, 62, 1); 
     color: white;
-    font-weight: 700; /* Bolder text for the button */
-    width: 123px; /* Set button width to 123px */
-    height: 52px; /* Set button height to 52px */
-    display: flex; /* Use flexbox to center content if needed */
-    justify-content: center; /* Center text horizontally */
-    align-items: center; /* Center text vertically */
-    border: none;
-    border-radius: 9999px; /* Fully rounded corners */
-    cursor: pointer;
-    font-size: 1rem; /* Adjust font size to fit within button */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-    padding: 0; /* Remove default padding as width/height are set */
+    font-size: 20px; 
+    font-weight: semi-bold;
 }
 
-.copy-button:hover {
-    background-color: #1a6f1a; /* Darker green on hover */
-}
-
-/* Hero Section Styling */
+/* Hero Section Style */
 .hero-section {
-  max-width: 1800px;
+  max-width: 1920px;
   margin: 0 auto;
   width: 100%;
-  height: 400px;
+  height: 239px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* Updated Gradient background to match the photo */
   background: linear-gradient(to right, #013223 0%, #006747 50%, #013223 100%);
   color: white;
-  padding: 2rem;
+  padding: 9rem;
   box-sizing: border-box;
 }
 
@@ -120,46 +103,44 @@ body {
 }
 
 .hero-logo {
-  width: 100px;
+  width: 92px;
   height: auto;
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: bold;
   margin: 0;
+  color: white;
 }
 
 .hero-slogan {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: semi-bold;
   white-space: nowrap;
-  /* max-width: 600px; */
-  line-height: 1.5;
+  line-height: 1;
   margin: 0;
 }
 
-/* Main container centers everything and sets max width */
 .main-container {
-  max-width: 1800px;
+  max-width: 1920px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Emergency Hotline & History Section Layout */
+/* Emergency Hotline & History Section Style */
 .hotline-history-section {
   display: flex;
   gap: 2rem;
-  padding: 2rem 2rem; /* Only vertical padding */
-  background: #f6fff8;
+  padding: 2rem 2rem; 
+  background: rgba(245, 255, 246, 1);
   box-sizing: border-box;
   width: 100%;
-  min-height: 900px; /* Optional: set a min height for visual balance */
+  min-height: 900px; 
   align-items: flex-start;
 }
 
-/* Hotline Cards Grid */
 .hotline-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -167,10 +148,9 @@ body {
   flex: 3;
 }
 
-/* Hotline Card Styling */
 .hotline-card {
-  background: #fff;
-  border-radius: 16px;
+  background: white;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   padding: 2rem 1.5rem;
   display: flex;
@@ -258,7 +238,7 @@ body {
   background: #006747;
 }
 
-/* History Section Styling */
+/* History Section Style */
 .history-section {
   background: #fff;
   border-radius: 16px;
