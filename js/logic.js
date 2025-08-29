@@ -1,47 +1,71 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const heartCount = document.getElementById('heart-count');
-  const coinCount = document.getElementById('coin-count');
-  const historyList = document.querySelector('.history-list');
+document.addEventListener("DOMContentLoaded", function(){
 
-  // Heart icon logic
-  document.querySelectorAll('.card-fav').forEach(icon => {
-    icon.addEventListener('click', () => {
-      let currentCount = parseInt(heartCount.textContent);
-      heartCount.textContent = currentCount + 1;
-    });
-  });
+  var heartCount = document.getElementById("heart-count")
+  var coinCount = document.getElementById("coin-count")
+  var historyList = document.querySelector(".history-list")
+  var clearHistoryBtn = document.querySelector(".history-clear")
+  var copyCountSpan = document.getElementById("copy-count")
+  var copyCount = 0 
 
-  // Call button logic
-  document.querySelectorAll('.card-call').forEach(btn => {
-    btn.addEventListener('click', function () {
-      // Find service name and number from the card
-      const card = btn.closest('.hotline-card');
-      const serviceName = card.querySelector('.card-title').textContent;
-      const serviceNumber = card.querySelector('.card-number').textContent;
+  // heart click
+  var heartBtns = document.querySelectorAll(".card-fav")
+  for(var i=0;i<heartBtns.length;i++){
+    heartBtns[i].addEventListener("click", function(){
+      var now = parseInt(heartCount.innerText)
+      now = now + 1
+      heartCount.innerText = now
+    })
+  }
 
-      // Check coins
-      let coins = parseInt(coinCount.textContent);
-      if (coins < 20) {
-        alert('Not enough coins to make a call!');
-        return;
+  // call button
+  var callBtns = document.querySelectorAll(".card-call")
+  for(var j=0; j<callBtns.length; j++){
+    callBtns[j].addEventListener("click", function(e){
+      var card = e.target.closest(".hotline-card")
+      var serviceName = card.querySelector(".card-title").innerText
+      var serviceNumber = card.querySelector(".card-number").innerText
+
+      var coinsNow = parseInt(coinCount.innerText)
+      if(coinsNow < 20){
+        alert("no coins sorry :(")
+        return
+      }
+      else{
+        alert("Calling " + serviceName + " (" + serviceNumber + ")")
+        coinCount.innerText = coinsNow - 20
       }
 
-      // Show alert
-      alert(`Calling ${serviceName} (${serviceNumber})`);
+      // add history with time
+      var timeNow = new Date()
+      var li = document.createElement("li")
+      li.className = "history-item"
+      li.innerHTML = "<span class='history-name'>" + serviceName + "</span>" +
+                     "<span class='history-number'>" + serviceNumber + "</span>" +
+                     "<span class='history-time'>" + timeNow.toLocaleTimeString() + "</span>"
+      historyList.prepend(li)
+    })
+  }
 
-      // Deduct coins
-      coinCount.textContent = coins - 20;
+  // copy button
+  var copyBtns = document.querySelectorAll(".card-copy")
+  for(var k=0;k<copyBtns.length;k++){
+    copyBtns[k].addEventListener("click", function(ev){
+      var card = ev.target.closest(".hotline-card")
+      var serviceNumber = card.querySelector(".card-number").innerText
 
-      // Add to history
-      const time = new Date().toLocaleTimeString();
-      const li = document.createElement('li');
-      li.className = 'history-item';
-      li.innerHTML = `
-        <span class="history-name">${serviceName}</span>
-        <span class="history-number">${serviceNumber}</span>
-        <span class="history-time">${time}</span>
-      `;
-      historyList.prepend(li); // Add to top of history
-    });
-  });
-});
+      navigator.clipboard.writeText(serviceNumber).then(function(){
+        alert("copied!!")
+        copyCount = copyCount + 1
+        if(copyCountSpan){
+          copyCountSpan.innerText = copyCount
+        }
+      })
+    })
+  }
+
+  // clear history
+  clearHistoryBtn.addEventListener("click", function(){
+    historyList.innerHTML = ""   
+  })
+
+})

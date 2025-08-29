@@ -150,94 +150,124 @@ body {
 
 .hotline-card {
   background: white;
-  border-radius: 10px;
+  border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  padding: 2rem 1.5rem;
+  padding: 1rem 0.8rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 0.5rem;
   min-width: 260px;
+  max-width: 370px;
+  height: 340px;
+  transition: box-shadow 0.2s;
+  border: 1px solid #f2f2f2;
   
+}
+
+.hotline-card:hover {
+  box-shadow: 0 8px 24px rgba(0,103,71,0.10);
 }
 
 .card-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   justify-content: space-between;
+  margin-bottom: 0.3rem;
 }
 
 .card-icon {
+  display: block;
   width: 40px;
   height: 40px;
+  border-radius: 12px;
+  background: #ffeaea;
+  padding: 4px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
 }
 
 .card-title {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(17, 17, 17, 1);
+  margin-bottom: 0.1rem;
   flex: 1;
 }
 
 .card-fav {
   font-size: 1.5rem;
-  color: #bbb;
   cursor: pointer;
+  margin-left: 0.5rem;
+  transition: color 0.2s;
 }
 
 .card-subtitle {
-  font-size: 1rem;
-  color: #666;
+  font-size: 18px;
+  color: #5C5C5C;
+  font-weight: regular;
+  margin-bottom: 0.1rem;
 }
 
 .card-number {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #006747;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 0.1rem;
 }
 
 .card-tags {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
 .card-tag {
-  background: #f2f2f2;
-  color: #888;
-  border-radius: 8px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.9rem;
+  background: #F2F2F2;
+  color: #5C5C5C;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: regular;
 }
+
 
 .card-actions {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
 }
 
 .card-copy, .card-call {
   flex: 1;
-  padding: 0.5rem 0;
-  border-radius: 9999px;
-  border: none;
-  font-weight: 600;
+  padding: 0.7rem 0;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  font-weight: 300;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .card-copy {
+  background: #fff;
+  color: #5C5C5C;
+}
+
+.card-copy:hover {
   background: #f2f2f2;
-  color: #333;
 }
 
 .card-call {
-  background: #41ff6b;
-  color: #fff;
+  background: #00A63E;
+  color: white;
+  border: none;
 }
 
 .card-call:hover {
   background: #006747;
 }
-
 /* History Section Style */
 .history-section {
   background: #fff;
@@ -259,17 +289,18 @@ body {
   align-items: center;
   justify-content: space-between;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .history-clear {
-  background: #41ff6b;
-  color: #fff;
+  background: #00A63E;
+  color: white;
   border: none;
   border-radius: 9999px;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1.3rem;
   cursor: pointer;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .history-list {
@@ -286,7 +317,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 1rem;
-  background: #f6fff8;
+  background: rgb(247, 244, 244);
   border-radius: 8px;
   padding: 0.5rem 1rem;
 }
