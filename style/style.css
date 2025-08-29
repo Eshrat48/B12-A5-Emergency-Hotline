@@ -9,10 +9,16 @@ body {
   background: rgba(245, 255, 246, 1);
 }
 
-.main-container,
+.main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .navbar,
 .hero-section {
-  max-width: 100vw;      
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
@@ -328,7 +334,7 @@ body {
   padding: 0.5rem 1rem;
 }
 
-/* Mobile Responsive */
+/* Responsive for Mobile  */
 @media (max-width: 480px) {
   body {
     background: #f6fff8;
