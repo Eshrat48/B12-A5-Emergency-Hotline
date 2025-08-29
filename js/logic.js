@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
   var copyCountSpan = document.getElementById("copy-count")
   var copyCount = 0 
 
-  // heart click
+  // Heart Click
   var heartBtns = document.querySelectorAll(".card-fav")
   for(var i=0;i<heartBtns.length;i++){
     heartBtns[i].addEventListener("click", function(){
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
     })
   }
 
-  // call button
+  // Call Button
   var callBtns = document.querySelectorAll(".card-call")
   for(var j=0; j<callBtns.length; j++){
     callBtns[j].addEventListener("click", function(e){
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
       var coinsNow = parseInt(coinCount.innerText)
       if(coinsNow < 20){
-        alert("no coins sorry :(")
+        alert("No Coins. Sorry :( !")
         return
       }
       else{
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(){
         coinCount.innerText = coinsNow - 20
       }
 
-      // add history with time
+      // Add History with Time
       var timeNow = new Date()
       var li = document.createElement("li")
       li.className = "history-item"
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(){
     })
   }
 
-  // copy button
+  // Copy Button
   var copyBtns = document.querySelectorAll(".card-copy")
   for(var k=0;k<copyBtns.length;k++){
     copyBtns[k].addEventListener("click", function(ev){
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function(){
     })
   }
 
-  // clear history
+  // Clear History
   clearHistoryBtn.addEventListener("click", function(){
     historyList.innerHTML = ""   
   })
